@@ -3,7 +3,7 @@
   connection: local
 
   vars_prompt:
-    - name: mas_password
+    - name: app_store_password
       prompt: "What is your App Store password?"
       private: yes
 
