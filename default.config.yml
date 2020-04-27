@@ -2,47 +2,29 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
-configure_sudoers: yes
+configure_sudoers: no
 configure_terminal: yes
 configure_osx: yes
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/fishd72/Dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/Documents/git/Dotfiles
 dotfiles_files:
   - .zshrc
+  - .aliases
   - .gitignore
+  - .gitconfig
   - .inputrc
   - .osx
-  - .vimrc
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
-  - github/gh/gh
-  - go
-  - gpg
   - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
-  - wget
-  - wrk
+  - dockutil
+  - mas
+  - packer
+  - qemu
+  - http://git.io/sshpass.rb
 
 homebrew_taps:
   - homebrew/core
@@ -50,22 +32,57 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
+  - 1password
+  - appcleaner
+  - autodmg
+  - balenaetcher
+  - cheatsheet
+  - cyberduck
   - dropbox
+  - evernote
   - firefox
-  - google-chrome
   - handbrake
-  - licecap
-  - sequel-pro
+  - launchcontrol
+  - mactracker
+  - ripit
   - slack
-  - sublime-text
-  - transmit
+  - suspicious-package
+  - transmission
+  - twitch
   - vagrant
+  - Steam
+  - Dosbox
+  - OpenEmu
+  - visual-studio-code
+  - coconutbattery
+  - caffeine
+  - Microsoft-teams
+  - Vuescan
+  - vmware-fusion
+  - homebrew/cask-drivers/synology-drive
+  - Signal
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
-mas_email: ""
+mas_installed_apps:
+  - { id: 1037126344, name: "Apple Configurator 2 (2.12.1)" }
+  - { id: 1278508951, name: "Trello (2.11.4)" }
+  - { id: 425424353, name: "The Unarchiver (4.2.1)" }
+  - { id: 409183694, name: "Keynote (10.0)" }
+  - { id: 494803304, name: "WiFi Explorer (2.6)" }
+  - { id: 1175706108, name: "Geekbench 4 (4.4.1)" }
+  - { id: 1295203466, name: "Microsoft Remote Desktop (10.3.9)" }
+  - { id: 1160374471, name: "PiPifier (1.2.4)" }
+  - { id: 451907568, name: "Paprika Recipe Manager (2.2.0)" }
+  - { id: 1481669779, name: "Evernote Web Clipper (1.0.5)" }
+  - { id: 1384080005, name: "Tweetbot (3.3.3)" }
+  - { id: 731062389, name: "iFlicks 2 (2.8.1)" }
+  - { id: 409201541, name: "Pages (10.0)" }
+  - { id: 407963104, name: "Pixelmator (3.9)" }
+  - { id: 425264550, name: "Disk Speed Test (3.2)" }
+  - { id: 409203825, name: "Numbers (10.0)" }
+  - { id: 1289197285, name: "MindNode (7.1.1)" }
+  - { id: 411643860, name: "DaisyDisk (4.10)" }
+mas_email: "fishd@me.com"
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
