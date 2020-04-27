@@ -1,0 +1,13 @@
+---
+vscode_setup_sf_font: true
+
+default_vscode_packages:
+
+  # vscode
+  - bbenoist.vagrant
+  - DavidAnson.vscode-markdownlint
+  - esbenp.prettier-vscode
+  - marcostazi.VS-code-vagrantfile
+  - mrmlnc.vscode-duplicate
+  - ms-python.python
+  - vscoss.vscode-ansible
