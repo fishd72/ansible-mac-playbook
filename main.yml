@@ -2,6 +2,11 @@
 - hosts: all
   connection: local
 
+  vars_prompt:
+    - name: mas_password
+      prompt: "What is your App Store password?"
+      private: yes
+
   vars_files:
     - default.config.yml
 

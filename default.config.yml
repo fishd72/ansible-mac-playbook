@@ -83,7 +83,6 @@ mas_installed_apps:
   - { id: 1289197285, name: "MindNode (7.1.1)" }
   - { id: 411643860, name: "DaisyDisk (4.10)" }
 mas_email: "fishd@me.com"
-mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 
