@@ -1,5 +1,6 @@
 ---
 downloads: ~/.ansible-downloads/
+repo-location: ~/Development/
 
 configure_dotfiles: yes
 configure_sudoers: no
@@ -9,11 +10,11 @@ configure_vscode: yes
 configure_dock: yes
 osx_use_dotfile: no
 osx_use_defaults: yes
-install_agkozak: yes
+clone_repos: yes
 
 dotfiles_repo: https://github.com/fishd72/Dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Documents/git/Dotfiles
+dotfiles_repo_local_destination: {{ repo=location }}/Dotfiles
 dotfiles_files:
   - .zshrc
   - .aliases
@@ -65,6 +66,7 @@ homebrew_cask_apps:
   - Vuescan
   - 1password
 
+
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
 - { id: 1037126344, name: "Apple Configurator 2 (2.12.1)" }
@@ -87,6 +89,7 @@ mas_installed_apps:
 - { id: 494803304, name: "WiFi Explorer (2.6)" }
 mas_email: ""
 mas_password: ""
+
 
 osx_script: "~/.osx --no-restart"
 osx_defaults: 
@@ -280,6 +283,13 @@ dockitems_enabled:
   - name: VMware Fusion
     path: "/Applications/VMware Fusion.app"
     pos: 10
+
+
+  git_repos:
+   - https://github.com/fishd72/vagrant-ansible.git
+   - https://github.com/fishd72/vagrant-jpslab.git
+   - https://github.com/fishd72/vagrant-dplab.git
+   - https://github.com/agkozak/agkozak-zsh-prompt.git
 
 
 # Install packages from other package managers.

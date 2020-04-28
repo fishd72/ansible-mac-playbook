@@ -41,6 +41,10 @@
       when: configure_osx
       tags: ['osx']
 
+    - include_tasks: tasks/git-repos.yml
+      when: clone_repos
+      tags: ['repos']
+
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
