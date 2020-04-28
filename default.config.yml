@@ -84,6 +84,8 @@ mas_installed_apps:
 - { id: 1278508951, name: "Trello (2.11.4)" }
 - { id: 1384080005, name: "Tweetbot (3.3.3)" }
 - { id: 494803304, name: "WiFi Explorer (2.6)" }
+mas_email: ""
+mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 osx_defaults: 
