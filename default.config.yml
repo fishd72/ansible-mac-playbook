@@ -9,6 +9,7 @@ configure_vscode: yes
 configure_dock: yes
 osx_use_dotfile: no
 osx_use_defaults: yes
+install_agkozak: yes
 
 dotfiles_repo: https://github.com/fishd72/Dotfiles.git
 dotfiles_repo_accept_hostkey: yes
@@ -28,6 +29,7 @@ homebrew_installed_packages:
   - packer
   - qemu
   - http://git.io/sshpass.rb
+  - zsh-history-substring-search
 
 homebrew_taps:
   - homebrew/core
