@@ -1,27 +1,28 @@
 <img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
 
-# Mac Development Ansible Playbook
+# Mac deployment Ansible Playbook
 
-[![Build Status](https://travis-ci.org/geerlingguy/mac-dev-playbook.svg?branch=master)](https://travis-ci.org/geerlingguy/mac-dev-playbook)
 
-This playbook installs and configures most of the software I use on my Mac for web and software development. Some things in macOS are slightly difficult to automate, so I still have some manual installation steps, but at least it's all documented here.
+This playbook installs and configures most of the software I use on my Mac and is mostly code re-used from Jeff Geerling's [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook). My modified version does most of the heavy lifting automatically but I'll be adding more things as I can think of them.
 
-This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be evolving this set of playbooks over time.
+As such, this is very much a work in progress, and is mostly a means for me to document my current Mac's setup as well as learn Ansible. I'll be evolving this set of playbooks over time.
 
 *See also*:
 
+  - [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) (the original inspiration for this project)
   - [Boxen](https://github.com/boxen)
   - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool)
   - [osxc](https://github.com/osxc)
-  - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks) (the original inspiration for this project)
+  - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)
 
 ## Installation
 
   1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
   2. [Install Ansible](http://docs.ansible.com/intro_installation.html).
-  3. Clone this repository to your local drive.
-  4. Run `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
-  5. Run `ansible-playbook main.yml -i inventory -K` inside this directory. Enter your account password when prompted.
+  3. Sign into (at least) the Apple App Store (issue#)
+  4. Clone this repository to your local drive.
+  5. Run `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
+  6. Run `ansible-playbook main.yml -i inventory -K` inside this directory. Enter your account password when prompted.
 
 > Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
@@ -33,7 +34,7 @@ You can filter which part of the provisioning process to run by specifying a set
 
 ## Overriding Defaults
 
-Not everyone's development environment and preferred software configuration is the same.
+Not everyone's environment and preferred software configuration is the same. This playbook has been fully customised to set up my Mac the way *I* like it, you may differ, and that's ok.
 
 You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
 
@@ -69,94 +70,100 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 
 Applications (installed with Homebrew Cask):
 
-  - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/)
-  - [Docker](https://www.docker.com/)
-  - [Dropbox](https://www.dropbox.com/)
-  - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-  - [Google Chrome](https://www.google.com/chrome/)
-  - [Handbrake](https://handbrake.fr/)
-  - [Homebrew](http://brew.sh/)
-  - [LICEcap](http://www.cockos.com/licecap/)
-  - [LimeChat](http://limechat.net/mac/)
-  - [MacVim](http://macvim-dev.github.io/macvim/)
-  - [nvALT](http://brettterpstra.com/projects/nvalt/)
-  - [Sequel Pro](https://www.sequelpro.com/) (MySQL client)
-  - [Skitch](https://evernote.com/skitch/)
-  - [Slack](https://slack.com/)
-  - [Sublime Text](https://www.sublimetext.com/)
-  - [Transmit](https://panic.com/transmit/) (S/FTP client)
-  - [Vagrant](https://www.vagrantup.com/)
+  - appcleaner
+  - autodmg
+  - balenaetcher
+  - caffeine
+  - cheatsheet
+  - coconutbattery
+  - cyberduck
+  - Dosbox
+  - evernote
+  - firefox
+  - handbrake
+  - launchcontrol
+  - Microsoft-teams
+  - OpenEmu
+  - ripit
+  - Signal
+  - slack
+  - Steam
+  - suspicious-package
+  - transmission
+  - twitch
+  - vagrant
+  - visual-studio-code
+  - vmware-fusion
+  - Vuescan
+  - 1password
 
 Packages (installed with Homebrew):
 
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
-  - go
-  - gpg
-  - hub
   - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
-  - wget
-  - wrk
+  - mas
+  - packer
+  - qemu
+  - http://git.io/sshpass.rb
+  - zsh-history-substring-search
+  
+More Packages (installed via the App Store):
 
-My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of macOS for better performance and ease of use. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
+- Apple Configurator 2
+- DaisyDisk
+- Disk Speed Test
+- Evernote Web Clipper
+- Geekbench 4
+- iFlicks 2
+- Keynote
+- Microsoft Remote Desktop
+- MindNode
+- Numbers
+- Pages
+- Paprika Recipe Manager
+- PiPifier
+- Pixelmator
+- The Unarchiver
+- Trello
+- Tweetbot
+- WiFi Explorer
 
-Finally, there are a few other preferences and settings added on for various apps and services.
+VSCode Extensions installed:
+
+ - bbenoist.vagrant
+ - DavidAnson.vscode-markdownlint
+ - esbenp.prettier-vscode
+ - marcostazi.VS-code-vagrantfile
+ - mrmlnc.vscode-duplicate
+ - ms-python.python
+ - vscoss.vscode-ansible
+
+I also apply some custom config to VSCode using a J2 template, it's quite basic as I've only recently transitioned from Atom but I'll be extending it as I go.
+
+My [dotfiles](https://github.com/fishd72/dotfiles) are also installed into the current user's home directory, including custom *gitignore*, *gitconfig* as well as configuration for both bash and zsh shells. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
+
+Finally, I tweak a fair few macOS settings, do some Dock reconfiguration, clone some git repositories I'm currently working on as well as an extension for zsh, and customise Terminal with a custom theme.
+
 
 ## Future additions
 
 ### Things that still need to be done manually
 
-It's my hope that I can get the rest of these things wrapped up into Ansible playbooks soon, but for now, these steps need to be completed manually (assuming you already have Xcode and Ansible installed, and have run this playbook).
-
-  1. Set JJG-Term as the default Terminal theme (it's installed, but not set as default automatically).
-  2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
-  3. Install all the apps that aren't yet in this setup (see below).
-  4. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
-  5. Set trackpad tracking rate.
-  6. Set mouse tracking rate.
-  7. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
+I'm still testing, but I want to look further into the config of some of the apps I install, if I can figure out what default config I need, I'll try to include it.
 
 ### Applications/packages to be added:
 
-These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
-
-  - [iShowU HD](http://www.shinywhitebox.com/downloads/iShowU_HD_2.3.20.dmg)
-  - [Adobe Creative Cloud](http://www.adobe.com/creativecloud.html)
+  - Synology Drive - I did have this working via homebrew cask, however it seems they've changed the file permissions as downloads now fail.
+  - tbc
 
 ### Configuration to be added:
 
-  - I have vim configuration in the repo, but I still need to add the actual installation:
-    ```
-    mkdir -p ~/.vim/autoload
-    mkdir -p ~/.vim/bundle
-    cd ~/.vim/autoload
-    curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > pathogen.vim
-    cd ~/.vim/bundle
-    git clone git://github.com/scrooloose/nerdtree.git
-    ```
+  - tbc
 
 ## Testing the Playbook
 
-Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! Instead, I posted instructions for how I build a [Mac OS X VirtualBox VM](https://github.com/geerlingguy/mac-osx-virtualbox-vm), on which I can continually run and re-run this playbook to test changes and make sure things work correctly.
+Like Jeff, I've tested this mainly in a VMware Fusion virtual machine. I'll look into getting some documentation up here, but it's not terribly complicated.
 
-Additionally, this project is [continuously tested on Travis CI's macOS infrastructure](https://travis-ci.org/geerlingguy/mac-dev-playbook).
+Automated testing is next on the to-do list... I've been using this playbook, along with Jeff's excellent [youtube series](https://www.youtube.com/playlist?list=PL2_OBreMn7FplshFCWYlaN2uS8et9RjNG) to learn Ansible, so next I need to learn how to automate the testing of playbooks.
 
 ## Ansible for DevOps
 
@@ -164,4 +171,4 @@ Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which teaches
 
 ## Author
 
-[Jeff Geerling](https://www.jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
+[Dave Fisher](https://github.com/fishd72), 2020 (originally inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)).
