@@ -1,7 +1,7 @@
 ---
 # Custom Terminal theme.
 - name: Get current Terminal profile.
-  shell: defaults read com.apple.terminal 'Default Window Settings'
+  shell: defaults read com.apple.Terminal 'Default Window Settings'
   register: terminal_theme
   changed_when: false
   check_mode: no
@@ -15,7 +15,7 @@
 - name: Ensure custom Terminal profile is set as default.
   shell: "{{ item }}"
   with_items:
-    - defaults write com.apple.terminal 'Default Window Settings' -string Custom
-    - defaults write com.apple.terminal 'Startup Window Settings' -string Custom
+    - defaults write com.apple.Terminal 'Default Window Settings' -string Custom
+    - defaults write com.apple.Terminal 'Startup Window Settings' -string Custom
   changed_when: false
   when: "'Custom' not in terminal_theme.stdout"
