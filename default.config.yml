@@ -46,7 +46,7 @@ homebrew_cask_apps:
   - evernote
   - firefox
   - handbrake
-  - homebrew/cask-drivers/synology-drive
+#  - homebrew/cask-drivers/synology-drive
   - launchcontrol
   - Microsoft-teams
   - OpenEmu
