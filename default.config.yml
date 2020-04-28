@@ -1,6 +1,6 @@
 ---
 downloads: ~/.ansible-downloads/
-repo-location: ~/Development/
+repo_location: ~/Development/
 
 configure_dotfiles: yes
 configure_sudoers: no
@@ -14,7 +14,7 @@ clone_repos: yes
 
 dotfiles_repo: https://github.com/fishd72/Dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: "{{ repo-location }}/Dotfiles"
+dotfiles_repo_local_destination: "{{ repo_location }}/Dotfiles"
 dotfiles_files:
   - .zshrc
   - .aliases

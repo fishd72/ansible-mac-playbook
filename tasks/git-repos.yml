@@ -1,11 +1,11 @@
 ---
 - name: Ensure git staging area exists.
   file:
-    path: "{{ repo-location }}"
+    path: "{{ repo_location }}"
     state: directory
 
 - name: Clone listed Git repos.
   git:
     repo: "{{ item.name | default(item) }}"
-    dest: "{{ repo-location }}"
+    dest: "{{ repo_location }}"
   loop: "{{ git_repos }}"
