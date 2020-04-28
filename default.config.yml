@@ -7,8 +7,8 @@ configure_terminal: yes
 configure_osx: yes
 configure_vscode: yes
 configure_dock: yes
-osx_use_dotfile: false
-osx_use_defaults: true
+osx_use_dotfile: no
+osx_use_defaults: yes
 
 dotfiles_repo: https://github.com/fishd72/Dotfiles.git
 dotfiles_repo_accept_hostkey: yes
