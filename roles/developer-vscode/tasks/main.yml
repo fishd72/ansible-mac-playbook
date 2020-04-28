@@ -10,7 +10,7 @@
     src: "{{ item }}"
     dest: ~/Library/Fonts/
   with_fileglob:
-    - /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-*.otf
+    - /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-*.otf
   when:
     - vscode_setup_sf_font
     - ansible_facts['os_family'] == "Darwin"
