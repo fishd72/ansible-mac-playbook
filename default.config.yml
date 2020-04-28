@@ -285,7 +285,7 @@ dockitems_enabled:
     pos: 10
 
 
-  git_repos:
+git_repos:
    - https://github.com/fishd72/vagrant-ansible.git
    - https://github.com/fishd72/vagrant-jpslab.git
    - https://github.com/fishd72/vagrant-dplab.git
