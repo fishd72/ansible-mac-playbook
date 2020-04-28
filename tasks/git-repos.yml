@@ -6,6 +6,6 @@
 
 - name: Clone listed Git repos.
   git:
-    repo: "{{ item.name | default(item) }}"
-    dest: "{{ repo_location }}"
+    repo: "{{ item.url }}"
+    dest: "{{ repo_location }}/{{ item.name }}"
   loop: "{{ git_repos }}"

@@ -286,10 +286,10 @@ dockitems_enabled:
 
 
 git_repos:
-   - https://github.com/fishd72/vagrant-ansible.git
-   - https://github.com/fishd72/vagrant-jpslab.git
-   - https://github.com/fishd72/vagrant-dplab.git
-   - https://github.com/agkozak/agkozak-zsh-prompt.git
+  - {url: "https://github.com/fishd72/vagrant-ansible.git", name: "vagrant-ansible"}
+  - {url: "https://github.com/fishd72/vagrant-jpslab.git", name: "vagrant-jpslab"}
+  - {url: "https://github.com/fishd72/vagrant-dplab.git", name: "vagrant-dplab"}
+  - {url: "https://github.com/agkozak/agkozak-zsh-prompt.git", name: "agkozak-zsh-prompt"}
 
 
 # Install packages from other package managers.
