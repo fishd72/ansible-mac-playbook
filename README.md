@@ -141,7 +141,7 @@ I also apply some custom config to VSCode using a J2 template, it's quite basic 
 
 My [dotfiles](https://github.com/fishd72/dotfiles) are also installed into the current user's home directory, including custom *gitignore*, *gitconfig* as well as configuration for both bash and zsh shells. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
 
-Finally, I tweak a fair few macOS settings (using code from a PR [CherryKitten](https://github.com/CherryKitten) raised on the original playbook), do some Dock reconfiguration, clone some git repositories that I'm currently working on as well as add an extension for zsh, and finally customise Terminal with a custom theme.
+Finally, I tweak a fair few macOS settings (using [code from a PR](https://github.com/geerlingguy/mac-dev-playbook/pull/79) [CherryKitten](https://github.com/CherryKitten) raised on the original playbook), do some Dock reconfiguration, clone some git repositories that I'm currently working on as well as add an extension for zsh, and finally customise Terminal with a custom theme.
 
 
 ## Future additions
