@@ -14,7 +14,7 @@ clone_repos: yes
 
 dotfiles_repo: https://github.com/fishd72/Dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: "{{ repo=location }}/Dotfiles"
+dotfiles_repo_local_destination: "{{ repo-location }}/Dotfiles"
 dotfiles_files:
   - .zshrc
   - .aliases
