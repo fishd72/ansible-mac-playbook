@@ -17,6 +17,6 @@
 
 - name: Populate settings for VSCode
   template:
-      dest: ~/Library/Application\ Support/Code/User/settings.json
+      dest: ~/Library/Application Support/Code/User/settings.json
       src: "{{ role_path }}/templates/VSCode_Settings.j2"
       force: yes 

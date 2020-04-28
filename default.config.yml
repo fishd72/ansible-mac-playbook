@@ -205,6 +205,30 @@ osx_defaults:
 # Open and save files as UTF-8 in TextEdit
 - { domain: com.apple.TextEdit, key: PlainTextEncoding, type: int, value: 4 }
 - { domain: com.apple.TextEdit, key: PlainTextEncodingForWrite, type: int, value: 4 }
+# Use `~/Documents/Torrents` to store incomplete downloads
+- { domain: org.m0k.transmission, key: UseIncompleteDownloadFolder, type: bool, value: true }
+- { domain: org.m0k.transmission, key: IncompleteDownloadFolder, type: string, value: "${HOME}/Documents/Torrents" }
+# Use `~/Downloads` to store completed downloads
+- { domain: org.m0k.transmission, key: DownloadLocationConstant, type: bool, value: true }
+# Don’t prompt for confirmation before downloading
+- { domain: org.m0k.transmission, key: DownloadAsk, type: bool, value: false }
+- { domain: org.m0k.transmission, key: MagnetOpenAsk, type: bool, value: false }
+# Don’t prompt for confirmation before removing non-downloading active transfers
+- { domain: org.m0k.transmission, key: CheckRemoveDownloading, type: bool, value: true }
+# Trash original torrent files
+- { domain: org.m0k.transmission, key: DeleteOriginalTorrent, type: bool, value: true }
+# Hide the donate message
+- { domain: org.m0k.transmission, key: WarningDonate, type: bool, value: false }
+# Hide the legal disclaimer
+- { domain: org.m0k.transmission, key: WarningLegal, type: bool, value: false }
+# IP block list.
+# Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
+- { domain: org.m0k.transmission, key: BlocklistNew, type: bool, value: true }
+- { domain: org.m0k.transmission, key: BlocklistURL, type: string, value: "http://john.bitsurge.net/public/biglist.p2p.gz" }
+- { domain: org.m0k.transmission, key: BlocklistAutoUpdate, type: bool, value: true }
+# Randomize port on launch
+- { domain: org.m0k.transmission, key: RandomPort, type: bool, value: true }
+
 
 vscode_setup_sf_font: true
 default_vscode_packages:
@@ -215,6 +239,7 @@ default_vscode_packages:
   - mrmlnc.vscode-duplicate
   - ms-python.python
   - vscoss.vscode-ansible
+
 
 dockitems_disabled:
   - Launchpad
