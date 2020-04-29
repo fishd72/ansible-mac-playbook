@@ -21,7 +21,7 @@ dotfiles_files:
   - .gitignore
   - .gitconfig
   - .inputrc
-  - .osx
+
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
