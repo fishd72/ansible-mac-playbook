@@ -21,6 +21,7 @@ dotfiles_files:
   - .gitignore
   - .gitconfig
   - .inputrc
+  - .vimrc
 
 
 homebrew_installed_packages:
@@ -30,6 +31,8 @@ homebrew_installed_packages:
   - packer
   - qemu
   - http://git.io/sshpass.rb
+  - terraform
+  - vifm
   - zsh-history-substring-search
 
 homebrew_taps:
@@ -237,6 +240,7 @@ default_vscode_packages:
   - mrmlnc.vscode-duplicate
   - ms-python.python
   - vscoss.vscode-ansible
+  - arcticicestudio.nord-visual-studio-code
 
 
 dockitems_disabled:
