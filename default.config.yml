@@ -22,6 +22,7 @@ dotfiles_files:
   - .gitconfig
   - .inputrc
   - .vimrc
+  - .config
 
 
 homebrew_installed_packages:
