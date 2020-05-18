@@ -12,9 +12,13 @@
   when: "'Nord' not in terminal_theme.stdout"
 
 - name: Ensure Nord Terminal profile is set as default.
-  shell: "{{ item }}"
+  osx_defaults:
+    domain: "{{ item.domain }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    state: "{{ item.state | default('present') }}"
   with_items:
-    - defaults write com.apple.Terminal 'Default Window Settings' -string Nord
-    - defaults write com.apple.Terminal 'Startup Window Settings' -string Nord
-  changed_when: false
+    - { domain: com.apple.Terminal, key: 'Default Window Settings', type: string, value: Nord }
+    - { domain: com.apple.Terminal, key: 'Startup Window Settings', type: string, value: Nord }
   when: "'Nord' not in terminal_theme.stdout"
