@@ -23,6 +23,7 @@ dotfiles_files:
   - .inputrc
   - .vimrc
   - .config
+  - .vim
 
 
 homebrew_installed_packages:
